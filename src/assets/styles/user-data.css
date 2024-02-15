@@ -1,0 +1,135 @@
+.accordion {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 150px;
+}
+
+.accordion__item {
+   margin-bottom: 0.8rem;
+   border: 1px solid var(--gray-light);
+}
+
+.accordion__toggle-sign {
+   font-size: 3rem;
+   font-weight: bolder;
+   position: relative;
+   display: flex;
+   align-items: center;
+}
+
+.accordion__toggle-sign span {
+   position: absolute;
+   width: 0.8rem;
+   border-bottom: 1px solid;
+   color: var(--dark);
+   left: -2.8rem;
+}
+
+.accordion__toggle-sign span:nth-child(2) {
+   position: absolute;
+   transform: rotate(90deg);
+   transition: all 0.5s ease;
+}
+
+.accordion__toggle-sign.show span:nth-child(2) {
+   transform: rotate(540deg);
+}
+
+.accordion__title-box {
+   display: flex;
+   flex-direction: row;
+   height: 5.2rem;
+   background-color: #fafafa;
+   padding-left: 2rem;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.accordion__title-box:hover {
+   cursor: pointer;
+   background-color: #f5f4f4;
+}
+
+.accordion__content {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   max-height: 0;
+   transition: max-height 0.5s;
+   background-color: #fff;
+   font-family: 'Roboto', sans-serif;
+}
+
+.accordion__content.show {
+   overflow: visible;
+   max-height: 9999px;
+}
+
+.accordion__info {
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   margin: 0;
+   opacity: 0;
+   transition: 1s;
+   margin: 2rem 2rem 2rem 1rem;
+   justify-content: center;
+}
+
+.accordion__info h4 {
+   margin-bottom: 0.8rem;
+}
+
+.accordion__info p {
+   margin-bottom: 0.6rem;
+}
+
+.accordion__content img {
+   height: 8rem;
+   width: 8rem;
+   border-radius: 50%;
+   transition: 1s;
+   margin: 2rem 1rem 0rem 1rem;
+}
+
+.accordion__info.show,
+.accordion__content.show img {
+   opacity: 1;
+}
+
+.accordion__info,
+.accordion__content img {
+   opacity: 0;
+}
+
+.accordion__info p:nth-child(4) {
+   margin-bottom: 0rem;
+}
+
+@media (min-width: 768px) {
+   .accordion__content {
+      flex-direction: row;
+   }
+
+   .accordion__content img {
+      margin: 2rem 1rem 0rem 2rem;
+   }
+}
+
+.user-btn {
+   background-color: var(--blue);
+   padding: 10px 15px;
+   border-radius: 5px;
+   color: white;
+   font-weight: bold;
+   border: 1px solid var(--blue);
+}
+
+.user-btn:hover {
+   transform: scale(1.02);
+   cursor: pointer;
+   background-color: white;
+   color: var(--blue);
+   border: 1px solid var(--blue);
+}
